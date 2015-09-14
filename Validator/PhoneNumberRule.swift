@@ -9,8 +9,8 @@
 import Foundation
 
 public class PhoneNumberRule: Rule {
-//    let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
-    let PHONE_REGEX = "^\\d{10}$"
+    
+    let PHONE_REGEX = "\\(\\d{3}\\)[\\s.-]\\d{3}[\\s.-]\\d{4}(\\sx\\d+)?"
     
     let message:String
     
