@@ -171,6 +171,16 @@ class ValidatorTests: XCTestCase {
         XCTAssertFalse(FullNameRule().validate("Carl"), "Full Name should be invalid")
     }
     
+    // MARK: Phone Number
+    
+    func testPhoneNumber(){
+        XCTAssertTrue(PhoneNumberRule().validate("5555555555"), "Phone number should be valid")
+    }
+    
+    func testPhoneNumberLengthInvalid(){
+        XCTAssertFalse(PhoneNumberRule().validate("5555"), "Phone number should be invalid")
+    }
+    
     // MARK: Register Field
     
     func testRegisterField(){

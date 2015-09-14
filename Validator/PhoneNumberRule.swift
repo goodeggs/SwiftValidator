@@ -8,20 +8,22 @@
 
 import Foundation
 
-class PhoneNumberRule: Rule {
+public class PhoneNumberRule: Rule {
 //    let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
     let PHONE_REGEX = "^\\d{10}$"
     
-    var message:String {
-        return "Enter a valid 10 digit phone number"
+    let message:String
+    
+    public init(message : String = "Enter a valid 10 digit phone number"){
+        self.message = message
     }
     
-    func validate(value: String) -> Bool {
+    public func validate(value: String) -> Bool {
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         return phoneTest.evaluateWithObject(value)
     }
     
-    func errorMessage() -> String {
+    public func errorMessage() -> String {
         return message
     }
     
